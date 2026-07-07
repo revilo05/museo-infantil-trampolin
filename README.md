@@ -21,7 +21,9 @@ La primera fase del proyecto se enfoca en:
 - Página de inicio.
 - Sección “Conoce el museo”.
 - Sección de salas y experiencias.
+- Landing individual por sala.
 - Actividades y calendario.
+- Landing individual por actividad o evento educativo.
 - Formulario de solicitudes educativas.
 - Trampolín Inclusivo.
 - Preguntas frecuentes.
@@ -30,20 +32,24 @@ La primera fase del proyecto se enfoca en:
 - Gestión de solicitudes educativas.
 - Gestión de actividades y contenido.
 
-## Fuera del alcance inicial
+## Consideración sobre Casa Rodrigo de Bastidas
 
-La gestión completa de eventos externos asociados a Casa Rodrigo de Bastidas no forma parte del alcance funcional principal de esta fase. Puede considerarse como integración futura.
+La gestión completa de eventos externos asociados a Casa Rodrigo de Bastidas no forma parte del alcance funcional principal de esta fase. Sin embargo, se incluirá una referencia contextual en la sección “Conoce el museo”, indicando que el Museo Infantil Trampolín opera dentro de Casa Rodrigo de Bastidas. También podrá contemplarse un medio de contacto para actividades o servicios relacionados, sin desarrollar un módulo completo de reservas para esa línea.
 
-## Stack tecnológico propuesto
+## Stack tecnológico actualizado
 
 | Capa | Tecnología | Estado |
 |---|---|---|
 | Frontend público | Next.js | Recomendado |
+| Backoffice | Next.js | Recomendado |
 | UI interactiva | Three.js | Uso moderado |
-| Backend | NestJS | Recomendado |
+| Backend/BaaS | Supabase Self-Hosted | Recomendado en evaluación |
 | Base de datos | PostgreSQL | Recomendado |
-| Autenticación | Better Auth | En evaluación |
-| BaaS / servicios administrados | Supabase | En evaluación |
+| Hosting frontend | Vercel | Recomendado para pruebas y despliegues |
+| Infraestructura backend | VPS / DigitalOcean | En evaluación |
+| Correo transaccional | Brevo / SendGrid / Mailgun / SMTP | En evaluación |
+| Backend propio | NestJS | Alternativa futura si no se usa Supabase |
+| Auth propia | Better Auth | Alternativa si no se usa Supabase Auth |
 
 ## Público objetivo
 
@@ -56,6 +62,15 @@ La gestión completa de eventos externos asociados a Casa Rodrigo de Bastidas no
 ## Enfoque UX/UI
 
 El portal debe sentirse como una experiencia educativa digital, no solamente como una web informativa. Se busca una interfaz amigable, colorida, accesible, institucional y entretenida, integrando elementos visuales relacionados con ciencia, naturaleza, energía, cultura y aprendizaje interactivo.
+
+## Criterios técnicos importantes
+
+- Las salas deben tener URL propia: `/salas/[slug]`.
+- Las actividades/eventos educativos deben tener URL propia: `/actividades/[slug]`.
+- Los modales pueden usarse como vista rápida, pero no deben sustituir páginas de detalle.
+- Three.js debe usarse con lazy loading y optimización.
+- WhatsApp se manejará como botón de contacto.
+- El envío de correos requiere evaluación de proveedor SMTP o correo transaccional.
 
 ## Documentación
 
