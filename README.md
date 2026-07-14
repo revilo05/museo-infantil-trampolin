@@ -81,3 +81,48 @@ El portal debe sentirse como una experiencia educativa digital, no solamente com
 - [Project Charter](./docs/project-charter.md)
 - [EDT/WBS y cronograma](./docs/wbs-cronograma.md)
 - [Minutas](./docs/minutas.md)
+
+## Frontend institucional
+
+La rama `feature/institutional-pages` incorpora la primera implementación del
+portal público con Next.js App Router, TypeScript estricto y Tailwind CSS. Incluye:
+
+- Inicio.
+- Conoce el museo y galería institucional preparada para activos oficiales.
+- Trampolín Inclusivo.
+- Preguntas frecuentes con búsqueda y categorías.
+- Contacto con validación y servicio de entrega reemplazable.
+- Header, navegación móvil accesible, footer, sitemap, robots y metadatos.
+- Rutas de integración, sin lógica funcional, para Salas, Actividades y Reservaciones.
+
+### Ejecutar localmente
+
+Requisitos: Node.js 20.9 o superior y pnpm.
+
+```bash
+pnpm install
+copy .env.example .env.local
+pnpm dev
+```
+
+Abre `http://localhost:3000`. Para una URL pública real, configura
+`NEXT_PUBLIC_SITE_URL` en `.env.local`.
+
+### Validar la entrega
+
+```bash
+pnpm lint
+pnpm typecheck
+pnpm build
+```
+
+### Límites de integración
+
+- `/salas`, `/actividades` y `/reservaciones` son contratos de navegación y no
+  implementan los módulos asignados a otros integrantes.
+- El formulario de Contacto valida los datos, pero devuelve `not_configured`
+  hasta integrar un proveedor de correo. Nunca muestra un éxito falso.
+- Supabase, autenticación, persistencia y esquemas de base de datos quedan fuera
+  de esta entrega.
+- Teléfono, correo, horarios, WhatsApp, Instagram, tarifas y cronología exacta
+  no se publican hasta recibir validación institucional.
