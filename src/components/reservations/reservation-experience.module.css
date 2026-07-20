@@ -1,0 +1,59 @@
+.page {
+  background: #f5f8ff;
+}
+
+.workspace {
+  padding-block: clamp(3rem, 7vw, 6rem);
+}
+
+.layout {
+  display: grid;
+  align-items: start;
+  gap: 1.5rem;
+}
+
+.sidebar {
+  display: grid;
+  gap: 1rem;
+}
+
+.supportCard {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 1rem;
+  border-radius: var(--radius-md);
+  background: var(--ink-strong);
+  color: #dce9ee;
+}
+
+.supportCard p {
+  margin: 0;
+  font-size: 0.74rem;
+}
+
+.supportCard strong {
+  color: #fff;
+}
+
+.supportIcon {
+  display: grid;
+  width: 2.65rem;
+  height: 2.65rem;
+  place-items: center;
+  border-radius: 0.8rem;
+  background: rgba(242, 198, 81, 0.18);
+  color: var(--yellow);
+}
+
+@media (min-width: 64rem) {
+  .layout {
+    grid-template-columns: minmax(0, 1.65fr) minmax(19rem, 0.7fr);
+  }
+
+  .sidebar {
+    position: sticky;
+    top: 6.5rem;
+  }
+}

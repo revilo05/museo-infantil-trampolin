@@ -1,0 +1,163 @@
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding-block: clamp(3.5rem, 8vw, 6.5rem);
+  background:
+    radial-gradient(circle at 8% 18%, rgba(242, 198, 81, 0.24), transparent 17rem),
+    linear-gradient(135deg, #eef8ff 0%, #f6f8ff 52%, #eff7f2 100%);
+}
+
+.hero::before,
+.hero::after {
+  position: absolute;
+  border: 2px dashed rgba(23, 104, 159, 0.13);
+  border-radius: 50%;
+  content: "";
+}
+
+.hero::before {
+  top: -10rem;
+  right: -6rem;
+  width: 27rem;
+  height: 27rem;
+}
+
+.hero::after {
+  bottom: -6rem;
+  left: 42%;
+  width: 10rem;
+  height: 10rem;
+}
+
+.grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  align-items: center;
+  gap: 2rem;
+}
+
+.kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  padding: 0.48rem 0.78rem;
+  border: 1px solid rgba(199, 71, 36, 0.2);
+  border-radius: var(--radius-pill);
+  background: rgba(255, 255, 255, 0.8);
+  color: var(--orange-dark);
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  max-width: 48rem;
+  margin-bottom: 1rem;
+  font-size: clamp(2.7rem, 6vw, 5.4rem);
+}
+
+.hero h1 span {
+  color: var(--blue-dark);
+}
+
+.description {
+  max-width: 45rem;
+  margin-bottom: 1.5rem;
+  color: var(--muted);
+  font-size: clamp(1.04rem, 1.7vw, 1.2rem);
+}
+
+.assurances {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.assurances li {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.55rem 0.78rem;
+  border: 1px solid rgba(22, 57, 75, 0.1);
+  border-radius: var(--radius-pill);
+  background: rgba(255, 255, 255, 0.7);
+  color: var(--ink);
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.assurances svg {
+  width: 1rem;
+  color: var(--green-dark);
+}
+
+.note {
+  display: grid;
+  max-width: 30rem;
+  grid-template-columns: auto 1fr;
+  gap: 1rem;
+  padding: clamp(1.3rem, 4vw, 2rem);
+  border: 1px solid rgba(22, 57, 75, 0.1);
+  border-radius: var(--radius-lg);
+  background: rgba(255, 255, 255, 0.86);
+  box-shadow: var(--shadow-md);
+}
+
+.noteIcon {
+  display: grid;
+  width: 3.5rem;
+  height: 3.5rem;
+  place-items: center;
+  border-radius: 1rem;
+  background: var(--yellow-soft);
+  color: var(--orange-dark);
+}
+
+.note span {
+  display: block;
+  margin-bottom: 0.3rem;
+  color: var(--orange);
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.note strong {
+  display: block;
+  color: var(--ink-strong);
+  line-height: 1.25;
+}
+
+.note p {
+  margin: 0.35rem 0 0;
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+@media (min-width: 48rem) {
+  .grid {
+    grid-template-columns: minmax(0, 1.35fr) minmax(19rem, 0.65fr);
+  }
+}
+
+@media (max-width: 39.99rem) {
+  .assurances {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .assurances li {
+    justify-content: center;
+  }
+
+  .note {
+    grid-template-columns: 1fr;
+  }
+}
