@@ -1,0 +1,116 @@
+.card {
+  padding: 1.35rem;
+  border: 1px solid rgba(22, 57, 75, 0.11);
+  border-radius: var(--radius-md);
+  background: linear-gradient(145deg, #ffffff, #f0f8ff);
+  box-shadow: var(--shadow-sm);
+}
+
+.heading {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.9rem;
+  margin-bottom: 0.9rem;
+}
+
+.headingIcon {
+  display: grid;
+  flex: 0 0 auto;
+  width: 2.9rem;
+  height: 2.9rem;
+  place-items: center;
+  border-radius: 1rem;
+  background: var(--blue-soft);
+  color: var(--blue-dark);
+}
+
+.eyebrow {
+  margin-bottom: 0.3rem;
+  color: var(--orange);
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.heading h2 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.description {
+  margin-bottom: 1rem;
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+
+.field {
+  display: grid;
+  gap: 0.4rem;
+}
+
+.field > span {
+  color: var(--ink-strong);
+  font-size: 0.78rem;
+  font-weight: 750;
+}
+
+.control {
+  position: relative;
+}
+
+.control input {
+  width: 100%;
+  min-height: 3.15rem;
+  padding: 0.72rem 3.2rem 0.72rem 0.85rem;
+  border: 1px solid #b8c7d1;
+  border-radius: 0.65rem;
+  background: #fbfcff;
+}
+
+.control input:focus {
+  border-color: var(--blue);
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(23, 104, 159, 0.11);
+  outline: 0;
+}
+
+.control button {
+  position: absolute;
+  top: 0.35rem;
+  right: 0.35rem;
+  display: grid;
+  width: 2.45rem;
+  height: 2.45rem;
+  place-items: center;
+  border: 0;
+  border-radius: 0.5rem;
+  background: var(--blue-dark);
+  color: #fff;
+  cursor: pointer;
+}
+
+.control button:hover {
+  background: var(--ink-strong);
+}
+
+.control button svg {
+  width: 1.05rem;
+}
+
+.help,
+.notice {
+  margin: 0.6rem 0 0;
+  font-size: 0.69rem;
+}
+
+.help {
+  color: var(--muted);
+}
+
+.notice {
+  padding: 0.65rem;
+  border-radius: 0.5rem;
+  background: var(--yellow-soft);
+  color: var(--ink);
+}
