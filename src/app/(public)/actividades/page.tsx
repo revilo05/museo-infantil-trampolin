@@ -1,27 +1,34 @@
-import { CalendarDays } from "lucide-react";
-import { IntegrationPlaceholder } from "@/components/integration-placeholder";
+import { CalendarDays, FlaskConical } from "lucide-react";
+import { ActivitiesExplorer } from "@/components/activities/activities-explorer";
+import { PageHero } from "@/components/ui/page-hero";
+import { activities, activityDataNotice } from "@/data/activities";
 import { createPageMetadata } from "@/lib/metadata";
+import styles from "@/components/module-two.module.css";
 
 export const metadata = createPageMetadata({
-  title: "Actividades — integración pendiente",
-  description: "Ruta reservada para el calendario de actividades del Museo Infantil Trampolín.",
+  title: "Actividades — Descubre y Aprende",
+  description:
+    "Explora la agenda demostrativa de talleres y actividades educativas de ciencia, arte y naturaleza del Museo Infantil Trampolín.",
   path: "/actividades",
-  noIndex: true,
+  image: "/og.png",
 });
 
-export default function ActivitiesIntegrationPage() {
+export default function ActivitiesPage() {
   return (
-    <IntegrationPlaceholder
-      eyebrow="Agenda educativa"
-      title="El calendario de actividades se integrará aquí"
-      description="La portada utiliza contenido de muestra sin fechas ni cupos. El módulo responsable conectará la agenda y las páginas /actividades/[slug] cuando los datos estén disponibles."
-      owner="módulo de Actividades"
-      icon={CalendarDays}
-      contractItems={[
-        "La portada consume título, categoría, descripción y URL.",
-        "Los estados de cupo solo aparecerán al existir una fuente oficial.",
-        "Cada actividad tendrá una URL individual para SEO y campañas.",
-      ]}
-    />
+    <>
+      <PageHero
+        eyebrow="Agenda educativa"
+        title="Descubre y Aprende"
+        description="Explora actividades, talleres y encuentros diseñados para despertar la curiosidad, la creatividad y la imaginación."
+        tone="yellow"
+        aside={
+          <div className={styles.moduleHeroArt} aria-hidden="true">
+            <span className={styles.heroOrbit}><CalendarDays size={50} /></span>
+            <FlaskConical className={styles.heroSpark} />
+          </div>
+        }
+      />
+      <ActivitiesExplorer activities={activities} dataNotice={activityDataNotice} />
+    </>
   );
 }
